@@ -4,3 +4,8 @@ models:
   - name: stg_jaffle_shop_customers
     config:
       materialized: table
+  - name: stg_jaffle_shop_orders
+    config:
+      materialized: incremental
+      incremental_strategy: merge
+      unique_key: order_id
